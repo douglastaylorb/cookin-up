@@ -16,7 +16,8 @@
   </ul>
 
   <p class=" paragrafo dica"> *Atenção: consideramos que você tem em casa sal, pimenta e água.</p>
-  <BotaoPrincipal texto="Buscar Receitas!" />
+  
+  <BotaoPrincipal texto="Buscar Receitas!" @click="$emit('buscarReceitas')"/>
 </section>
 </template>
 
@@ -36,7 +37,7 @@ export default {
     CardCategoria,
     BotaoPrincipal
   },
-  emits: ['adicionarIngrediente', 'removerIngrediente'],
+  emits: ['adicionarIngrediente', 'removerIngrediente', 'buscarReceitas'],
   async created() {
     this.categorias = await obterCategorias();
   },
